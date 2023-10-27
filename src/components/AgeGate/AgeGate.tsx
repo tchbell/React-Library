@@ -11,8 +11,7 @@ function AgeGate() {
   return (
     <div className={`bsi__age-gate ${ofAge ? 'success' : 'false'}`}>
       <h1>Age Gate</h1>
-      <DateForm updateOfAge={updateOfAge} />
-      {ofAge}
+      {ofAge && <DateForm updateOfAge={updateOfAge} />}
     </div>
   );
 }
