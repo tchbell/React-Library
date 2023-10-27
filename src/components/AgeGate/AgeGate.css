@@ -1,0 +1,24 @@
+.noScroll {
+  display: block;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: relative;
+}
+
+.ageGate {
+  margin: 15vh auto;
+  width: 80%;
+  max-width: 650px;
+  padding: 30px;
+  min-height: 200vh;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.ageGate__container {
+  position: fixed;
+  overflow-y: scroll;
+  inset: 0;
+}
