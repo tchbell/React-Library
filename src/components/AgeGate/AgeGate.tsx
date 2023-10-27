@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DateForm from './components/DateForm';
-
+import './AgeGate.css';
 function AgeGate() {
   const [ofAge, setOfAge] = useState(false);
 
