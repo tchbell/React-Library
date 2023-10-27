@@ -31,6 +31,15 @@ function App() {
 export default App;
 ```
 
+To use the AgeGate you must wrap it in the CookieWrapper
+
+```
+  <CookiesWrapper>
+    {' '}
+    <AgeGate />
+  </CookiesWrapper>
+```
+
 ## Development
 
 If you want to contribute to the React Library project or customize it for your specific needs, you'll need to work with the source code. Here are the commands to help you with the development process:
