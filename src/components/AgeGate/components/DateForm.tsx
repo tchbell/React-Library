@@ -1,5 +1,6 @@
 import DateInput from './DateInput';
 import React, { useState } from 'react';
+import { useCookies } from 'react-cookie';
 
 type UpdateOfAgeFunction = (value: boolean) => void;
 
@@ -14,6 +15,13 @@ function DateForm({ updateOfAge }: DateFormProps) {
   const [year, setYear] = useState<number | undefined>(undefined);
   const [error, setError] = useState('');
   const [userAge, setUserAge] = useState(0);
+
+  const [cookies, setCookie] = useCookies([
+    'AgeGateRememberMe',
+    'AgeGateCountryVal',
+  ]);
+  const todayDate = new Date();
+  const expiryDateNotRemember = new Date().setDate(todayDate.getDate() + 1);
 
   const handleDayChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDay(parseInt(event.target.value));
@@ -58,6 +66,13 @@ function DateForm({ updateOfAge }: DateFormProps) {
       if (age >= findLegalDrinkingAge()) {
         setError('Old enough to drink.');
         updateOfAge(true);
+        // This cookie logic is based off AgeGate-React
+        setCookie('AgeGateRememberMe', true, {
+          expires: new Date(expiryDateNotRemember),
+          path: '/',
+          secure: true,
+        });
+        //
       } else {
         setError('Not old enough to drink.');
         updateOfAge(false);
