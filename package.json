@@ -6,7 +6,8 @@
   "version": "1.4.1",
   "description": "",
   "scripts": {
-    "rollup": "rollup -c"
+    "rollup": "rollup -c",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +16,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.5",
     "@types/react": "^18.2.28",
+    "identity-obj-proxy": "^3.0.0",
     "react": "^18.2.0",
     "rollup": "^4.1.4",
     "rollup-plugin-dts": "^6.1.0",
