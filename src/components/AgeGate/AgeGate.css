@@ -1,24 +1,25 @@
-.noScroll {
-  display: block;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: relative;
+h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
 }
 
-.ageGate {
-  margin: 15vh auto;
-  width: 80%;
-  max-width: 650px;
-  padding: 30px;
-  min-height: 200vh;
-  background: rgba(255, 255, 255, 0.95);
+.bsi__age-gate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.ageGate__container {
-  position: fixed;
-  overflow-y: scroll;
-  inset: 0;
+.bsi__age-gate.success {
+  display: none;
+}
+
+.bsi__age-gate input::placeholder {
+  text-transform: capitalize;
+}
+
+.bsi__age-gate form {
+  display: flex;
+  gap: 1rem;
 }
