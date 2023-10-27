@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DateForm from './components/DateForm';
 import './AgeGate.css';
 function AgeGate() {
-  const [ofAge, setOfAge] = useState(false);
+  const [ofAge, setOfAge] = useState<boolean | undefined>(undefined);
 
   // Define a function to set the 'ofAge' state in the parent component
   const updateOfAge = (value: boolean) => {
@@ -11,7 +11,7 @@ function AgeGate() {
   return (
     <div className={`bsi__age-gate ${ofAge ? 'success' : 'false'}`}>
       <h1>Age Gate</h1>
-      {ofAge && <DateForm updateOfAge={updateOfAge} />}
+      {!ofAge === true && <DateForm updateOfAge={updateOfAge} />}
     </div>
   );
 }
